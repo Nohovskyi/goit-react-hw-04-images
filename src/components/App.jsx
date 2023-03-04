@@ -27,9 +27,10 @@ export const App = () => {
 
     fetchImage(question, currentPage)
       .then(data => {
-        console.log(data.hits);
+        console.log(data);
         if (data.hits.length === 0) {
-          return setError(true), setLoading(false);
+          setError(true);
+          setLoading(false);
         }
         return (
           setImages(prevImages => [...prevImages, ...data.hits]),
